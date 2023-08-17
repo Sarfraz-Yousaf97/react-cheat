@@ -1,24 +1,24 @@
-import logo from './logo.svg';
+import { HashRouter, Route, Routes } from "react-router-dom";
 import './App.css';
+import SideNav from "./Component/SideNav";
+import Home from "./Component/Home/Home";
+import Grid from '@mui/material/Grid';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HashRouter>
+      <Grid container spacing={2}>
+        <Grid  item xs={3}>
+          <SideNav />
+        </Grid>
+        <Grid style={{marginTop:'75px'}} item xs={9}>
+          <Routes>
+            <Route path="/" element={<Home/>}/>
+            </Routes>
+        </Grid>
+      </Grid>
+      </HashRouter>
   );
 }
 
