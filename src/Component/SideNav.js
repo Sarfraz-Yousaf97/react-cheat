@@ -16,7 +16,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-
+import backgroundImageback from '../static/assets/sidenavImage1.png'
 const drawerWidth = 345;
 
 function SideNav(props) {
@@ -25,37 +25,21 @@ function SideNav(props) {
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
+  };    
+
+  const divStyle = {
+    height: '100vh',
+    backgroundImage: `url(${backgroundImageback})`,
+    backgroundPosition: 'center',
   };
 
+
   const drawer = (
-    <div>
-      <Toolbar />
+    <div className="side-nav-custom" style={{backgroundColor:"#343E5A"}} >
       <Divider />
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
+      <div style={divStyle} >
+        <h1>I am admin</h1>
+      </div>
     </div>
   );
 
