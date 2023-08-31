@@ -9,10 +9,10 @@ function App() {
   return (
     <HashRouter>
       <Grid container spacing={2}>
-        <Grid  item xs={3}>
+        <Grid  item xs={4}>
           <SideNav />
         </Grid>
-        <Grid style={{marginTop:'75px'}} item xs={9}>
+        <Grid style={{marginTop:'75px'}} item xs={8}>
           <Routes>
             <Route path="/" element={<Home/>}/>
             </Routes>

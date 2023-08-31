@@ -17,7 +17,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import backgroundImageback from '../static/assets/sidenavImage1.png'
-const drawerWidth = 345;
+import AcUnitIcon from '@mui/icons-material/AcUnit';
+
+const drawerWidth = 420
 
 function SideNav(props) {
   const { window } = props;
@@ -32,13 +34,26 @@ function SideNav(props) {
     backgroundImage: `url(${backgroundImageback})`,
     backgroundPosition: 'center',
   };
+  const divTextHeader = {
+    width: '80%',
+    marginTop: 150,
+
+  }
 
 
   const drawer = (
     <div className="side-nav-custom" style={{backgroundColor:"#343E5A"}} >
       <Divider />
       <div style={divStyle} >
-        <h1>I am admin</h1>
+        <div className="container text-white d-flex justify-content-center">
+          <div style={divTextHeader}>
+            <h1 className='font-heading-main my-3'>Welcome to Zero Cheat</h1>
+              <div className='d-flex'>
+                <span></span>
+                <AcUnitIcon fontSize="large" color="white" />
+              </div>
+          </div>
+        </div>
       </div>
     </div>
   );
